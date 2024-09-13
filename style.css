@@ -1,0 +1,116 @@
+table {
+        border-collapse: collapse;
+        width: 100%;
+}
+td {
+        border: 1px solid black;
+        width: 12.5vw;
+        height: 60px;
+        text-align: center;
+}
+tr:nth-child(1) {
+        background-color: #118f8f;
+        color: #000000;
+}
+tr:nth-child(2) {
+        background-color: #f5f511;
+        color: #4F4F4F;
+}
+
+tr:nth-child(1):hover {
+        background-color: #000000;
+        color: #118f8f;
+}
+tr:nth-child(2):hover {
+        background-color: #4F4F4F;
+        color: #f5f511; 
+}
+
+
+.traffic-lights_container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 60vh;
+  background-color: #f0f0f0;
+}
+
+.traffic-lights {
+  width: 120px;
+  height: 300px;
+  border: 1px solid #000;
+  border-radius: 15px;
+  background-color: #ddd;
+  position: relative;
+}
+
+.position-method {
+  .lights_red {
+  position: absolute;
+  top: 20px;
+  left: 25px;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #000;
+  background-color: red;
+  border-radius: 50%;
+  }
+  
+  .lights_yellow {
+  position: absolute;
+  top: 94px;
+  left: -1px;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #000;
+  background-color: yellow;
+  border-radius: 50%;
+  }
+  
+  .lights_green {
+  position: absolute;
+  top: 94px;
+  left: -1px;
+  width: 70px;
+  height: 70px;
+  border: 1px solid #000;
+  background-color: green;
+  border-radius: 50%;
+  }
+}
+
+.transform-method {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.transform-method {
+   .lights::after {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: red;
+    transform : translateY(-95px);
+    border: 1px solid #000;
+    border-radius: 50%;
+  }
+  .lights {
+      position: absolute;
+    width: 70px;
+    height: 70px;
+    background-color: yellow;
+    border: 1px solid #000;
+    border-radius: 50%;
+  }
+  .lights::before {
+    content: '';
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    transform : translateY(95px);
+    background-color: green;
+    border: 1px solid #000;
+    border-radius: 50%;
+ }
